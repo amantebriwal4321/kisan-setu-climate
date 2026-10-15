@@ -7,7 +7,7 @@ crash is RIGHT NOW, from three stated signals:
   3. harvest season  — is it the crop's known glut month
 
 Each signal is normalised to 0-100, then combined with fixed, stated weights.
-Everything here is plain Python + math so a judge can read exactly how it works.
+Everything here is plain Python + math so anyone can read exactly how it works.
 """
 from statistics import mean
 
