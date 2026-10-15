@@ -1,0 +1,21 @@
+# Copy to .github/workflows/ci.yml to enable.
+name: ci
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - run: npm ci
+      - run: npm run ledger:selftest
+      - run: npm run ledger:verify
+      - run: npm run check:parity
+      - run: npm run build

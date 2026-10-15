@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+/* Kisan Setu v2 — "control room meets field". A modern agri palette (green-tinted, not
+   cream), Space Grotesk display + IBM Plex Sans/Devanagari body, turmeric as the one accent.
+   Single committed light look so the demo never flips. */
+:root {
+  color-scheme: light;
+  --ground: #eef3ec;
+  --surface: #ffffff;
+  --surface-2: #e4ebe0;
+  --ink: #14231a;
+  --ink-2: #5a665c;
+  --ink-3: #8a968c;
+  --border: #d6dfd1;
+
+  --brand: #157f46;
+  --brand-deep: #0f5e34;
+  --brand-soft: #e2f1e7;
+
+  --alarm: #e4483d;
+  --alarm-text: #b4291c;
+  --alarm-soft: #fbeae8;
+  --watch: #e08a17;
+  --watch-text: #955907;
+  --watch-soft: #fbf1e0;
+
+  --turmeric: #f4c430;
+  --turmeric-deep: #a97e00;
+
+  /* SaaS-dashboard surface (officer console) */
+  --dash-bg: #f4f7f4;
+  --dash-line: #e9ede9;
+
+  --font-display: var(--font-display), "Space Grotesk", system-ui, sans-serif;
+  --font-body: var(--font-body), "IBM Plex Sans", system-ui, sans-serif;
+  --font-deva: var(--font-deva), "IBM Plex Sans Devanagari", system-ui, sans-serif;
+  --font-kn: var(--font-kn), "Noto Sans Kannada", system-ui, sans-serif;
+  --font-mono: var(--font-mono), "IBM Plex Mono", ui-monospace, monospace;
+}
+
+* { border-color: var(--border); }
+
+body {
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: -0.006em;
+}
+
+h1, h2, h3, .display { font-family: var(--font-display); font-weight: 600; letter-spacing: -0.02em; }
+.mono { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+.deva { font-family: var(--font-deva); }
+.kn { font-family: var(--font-kn); }
+.muted { color: var(--ink-2); }
+.faint { color: var(--ink-3); }
+.eyebrow { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-3); font-weight: 600; }
+
+/* surfaces */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: 0 1px 2px rgba(20, 35, 26, 0.04), 0 10px 30px rgba(20, 35, 26, 0.05);
+}
+.panel { background: var(--surface-2); border: 1px solid var(--border); border-radius: 14px; }
+
+.kpi-num { font-family: var(--font-display); font-weight: 600; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
+
+/* badges */
+.badge { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 999px; }
+.badge-dot { width: 7px; height: 7px; border-radius: 999px; }
+.badge-high { background: var(--alarm-soft); color: var(--alarm-text); }
+.badge-high .badge-dot { background: var(--alarm); }
+.badge-watch { background: var(--watch-soft); color: var(--watch-text); }
+.badge-watch .badge-dot { background: var(--watch); }
+.badge-stable { background: var(--brand-soft); color: var(--brand-deep); }
+.badge-stable .badge-dot { background: var(--brand); }
+
+.pill { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; padding: 5px 12px; border-radius: 999px; background: var(--surface); color: var(--ink-2); border: 1px solid var(--border); }
+
+/* buttons (styled in CSS so type/color always apply) */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  font-family: var(--font-body); font-weight: 600; font-size: 15px; line-height: 1;
+  padding: 12px 20px; border-radius: 999px; border: 1px solid var(--border);
+  background: var(--surface); color: var(--ink); cursor: pointer;
+  transition: transform .08s ease, box-shadow .16s ease, background .16s ease, border-color .16s ease;
+}
+.btn:hover { box-shadow: 0 6px 18px rgba(20, 35, 26, 0.1); }
+.btn:active { transform: translateY(1px); }
+.btn:focus-visible { outline: 3px solid var(--turmeric); outline-offset: 2px; }
+.btn-primary { background: var(--brand); border-color: var(--brand-deep); color: #fff; }
+.btn-primary:hover { background: var(--brand-deep); }
+.btn-lg { font-size: 16px; padding: 15px 26px; }
+.btn-ghost { background: transparent; }
+.btn-danger { background: var(--alarm); border-color: var(--alarm-text); color: #fff; }
+.btn:disabled { opacity: .5; cursor: default; }
+
+.link { color: var(--brand-deep); font-weight: 600; text-decoration: none; }
+.link:hover { text-decoration: underline; }
+a { color: inherit; }
+
+/* accent underline used as the signature punctuation */
+.mark { background: linear-gradient(transparent 62%, var(--turmeric) 62%); }
+
+/* entrance reveal (page-load), staggered via inline animation-delay */
+@keyframes reveal-up { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+.reveal { opacity: 0; animation: reveal-up 0.85s cubic-bezier(.2,.7,.2,1) forwards; }
+@keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(4px); } }
+
+/* scroll-into-view reveal (see Reveal.tsx) — armed by JS, else stays visible */
+.rv { transition: opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1); }
+.rv.rv-armed { opacity: 0; transform: translateY(26px); }
+.rv.rv-armed.rv-in { opacity: 1; transform: none; }
+
+/* home (post-scroll landing) helpers */
+.home-wrap { background: linear-gradient(180deg, #dff0cf 0%, var(--ground) 220px); }
+.step-ico { width: 52px; height: 52px; border-radius: 14px; display: grid; place-items: center; font-size: 24px; background: var(--brand-soft); border: 1px solid var(--border); }
+.step-num { font-family: var(--font-mono); font-size: 12px; color: var(--brand-deep); font-weight: 600; letter-spacing: .04em; }
+.portal-card { display: block; padding: 22px; transition: transform .16s ease, box-shadow .16s ease; }
+.portal-card:hover { transform: translateY(-3px); box-shadow: 0 1px 2px rgba(20,35,26,.05), 0 16px 40px rgba(20,35,26,.1); }
+.scheme { display: inline-flex; align-items: center; gap: 7px; padding: 7px 13px; border-radius: 999px; background: var(--surface); border: 1px solid var(--border); font-size: 13px; font-weight: 600; color: var(--ink-2); }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+  .reveal { opacity: 1 !important; }
+  .rv.rv-armed { opacity: 1 !important; transform: none !important; }
+}

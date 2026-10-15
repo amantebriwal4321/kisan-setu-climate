@@ -1,0 +1,23 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "PollyHindiAlerts",
+      "Effect": "Allow",
+      "Action": ["polly:SynthesizeSpeech"],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CatalogReadWrite",
+      "Effect": "Allow",
+      "Action": ["dynamodb:Query", "dynamodb:BatchWriteItem", "dynamodb:PutItem"],
+      "Resource": "arn:aws:dynamodb:*:*:table/kisan-setu-catalog-*"
+    },
+    {
+      "Sid": "BedrockExplain",
+      "Effect": "Allow",
+      "Action": ["bedrock:InvokeModel", "bedrock:Converse"],
+      "Resource": "*"
+    }
+  ]
+}
