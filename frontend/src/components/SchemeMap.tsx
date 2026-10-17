@@ -17,7 +17,7 @@ const ROWS: SchemeRow[] = [
     gap: "Data.gov.in free tier provides daily modal prices; historical arrivals have rate-limits, so we cache district baselines.",
   },
   {
-    piece: "District crop area & glut context",
+    piece: "District crop area & surplus context",
     scheme: "NDSAP + Karnataka Crop Survey Portal",
     sourceUrl: "https://cropsurvey.karnataka.gov.in",
     status: "PUBLIC DATA",

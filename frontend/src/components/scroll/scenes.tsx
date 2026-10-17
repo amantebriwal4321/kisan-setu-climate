@@ -27,9 +27,9 @@ export function HeroScene() {
         </svg>
         <Grain />
         <div style={{ position: "absolute", left: "7%", top: "22%", maxWidth: 720, opacity: fade, transform: `translateY(${-p * 30}px)` }}>
-          <div className="eyebrow" style={{ color: "#7a4a1e" }}>Waste and energy · keep the harvest edible</div>
-          <h1 className="display" style={{ fontSize: "clamp(44px,8vw,92px)", lineHeight: 0.98, marginTop: 14, color: "#241a10", textShadow: "0 1px 20px rgba(255,240,200,.5)" }}>
-            Glut to <span className="mark">Value</span>.
+          <div className="eyebrow" style={{ color: "#7a4a1e" }}>Sustainable Supply Chains · keep the harvest edible</div>
+          <h1 className="display" style={{ fontSize: "clamp(40px,6.5vw,80px)", lineHeight: 1.02, marginTop: 14, color: "#241a10", textShadow: "0 1px 20px rgba(255,240,200,.5)" }}>
+            Turn crop surpluses into <span className="mark">climate wins</span>.
           </h1>
           <p style={{ fontSize: "clamp(15px,1.9vw,21px)", color: "#3a2a18", marginTop: 18, maxWidth: 600, lineHeight: 1.5, fontWeight: 500 }}>
             Surplus that nobody routes becomes food waste.
@@ -42,8 +42,8 @@ export function HeroScene() {
   );
 }
 
-// ---------------------------------------------------------------- Glut
-export function GlutScene({ surplusTonnes = 0 }: { surplusTonnes?: number }) {
+// ---------------------------------------------------------------- Surplus
+export function SurplusScene({ surplusTonnes = 0 }: { surplusTonnes?: number }) {
   const [ref, p] = useScrollProgress<HTMLElement>();
   const grow = range(p, 0.1, 0.85);
   const value = Math.round(lerp(0, surplusTonnes, grow));

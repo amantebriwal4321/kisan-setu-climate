@@ -4,7 +4,7 @@ We do NOT predict a future price. We score, per crop per day, how likely a price
 crash is RIGHT NOW, from three stated signals:
   1. arrivals surge  — today's arrivals vs the trailing 14-day average
   2. price slide     — how fast price has fallen over the trailing 7 days
-  3. harvest season  — is it the crop's known glut month
+  3. harvest season  — is it the crop's known surplus month
 
 Each signal is normalised to 0-100, then combined with fixed, stated weights.
 Everything here is plain Python + math so anyone can read exactly how it works.
@@ -18,7 +18,7 @@ W_SEASON = 0.15
 
 SEASON_BASELINE_DAYS = 14
 PRICE_LOOKBACK = 7
-# arrivals at 3x the early-season baseline (a real glut) = full arrivals signal
+# arrivals at 3x the early-season baseline (a real surplus) = full arrivals signal
 ARRIVALS_FULL_JUMP = 2.0
 # a 30% price fall over 7 days = full price signal
 PRICE_FULL_DROP = 0.30
@@ -29,7 +29,7 @@ def _clamp(x, lo=0.0, hi=100.0):
 
 
 def _arrivals_signal(arrivals, i, baseline):
-    """Compare today's arrivals to the EARLY-SEASON baseline. A glut is 'far more
+    """Compare today's arrivals to the EARLY-SEASON baseline. A surplus is 'far more
     supply than normally arrives', which a trailing window would miss once the peak
     has lasted a while."""
     if baseline <= 0:

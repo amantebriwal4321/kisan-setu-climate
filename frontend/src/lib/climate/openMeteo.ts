@@ -1,5 +1,5 @@
 // Fourth risk signal: a rain or heat anomaly for the district, from Open-Meteo.
-// Heavy rain and heat waves force early or distress harvests, which feed a glut.
+// Heavy rain and heat waves force early or distress harvests, which feed a surplus.
 //
 // recent window = last 14 days observed + next 7 days forecast (forecast API, past_days)
 // baseline      = the same 21 calendar days in each of the previous 10 years (archive API)

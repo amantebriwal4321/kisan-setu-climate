@@ -1,6 +1,6 @@
-# Kisan Setu: route crop gluts before they rot
+# Kisan Setu: route crop surpluses before they rot
 
-When a harvest glut crashes the mandi price, farmers dump crop they cannot sell. Small processing units in the same district still have spare weekly capacity. Kisan Setu spots the crash early, routes the surplus to those units, calls the farmer with a price, and gives every rescued lot a tamper evident passport with a QR anyone can verify.
+When a harvest surplus crashes the mandi price, farmers dump crop they cannot sell. Small processing units in the same district still have spare weekly capacity. Kisan Setu spots the crash early, routes the surplus to those units, calls the farmer with a price, and gives every rescued lot a tamper evident passport with a QR anyone can verify.
 
 - **Live:** https://kisan-setu-climate.vercel.app
 - **Track:** Sustainable Supply Chains (product lifecycle tracking, digital product passports, circular economy)
@@ -9,7 +9,7 @@ When a harvest glut crashes the mandi price, farmers dump crop they cannot sell.
 
 ## Why this is a climate problem
 
-Food loss and waste generate an estimated 8 to 10% of global greenhouse gas emissions ([UNEP Food Waste Index Report 2024](https://www.unep.org/resources/publication/food-waste-index-report-2024)). A tomato glut in Kolar is a small, very local version of that: the crop is fine, it just has nowhere to go that week. Every kilo that becomes paste or pickle instead of roadside waste keeps its production emissions from being thrown away.
+Food loss and waste generate an estimated 8 to 10% of global greenhouse gas emissions ([UNEP Food Waste Index Report 2024](https://www.unep.org/resources/publication/food-waste-index-report-2024)). A tomato surplus in Kolar is a small, very local version of that: the crop is fine, it just has nowhere to go that week. Every kilo that becomes paste or pickle instead of roadside waste keeps its production emissions from being thrown away.
 
 ## What it does
 

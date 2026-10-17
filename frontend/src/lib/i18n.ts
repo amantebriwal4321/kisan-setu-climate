@@ -83,11 +83,11 @@ export const STR: Record<Lang, Str> = {
     bring: (c, u, o) => `Bring your ${c} to ${u}. You’ll get ₹${o}/kg.`,
     pickup: (c, point, phone, u) => `Bring your ${c} to ${point} by tomorrow 10 am. Call ${phone} to confirm — a van takes it from there to ${u}.`,
     whyQ: (offer, crash) => `Why buy from the farmer at ₹${offer} when the mandi is ₹${crash}?`,
-    chainFresh: "glut, rots unsold",
+    chainFresh: "surplus, rots unsold",
     chainProcessed: (product) => `as ${product} · lasts`,
     chainYouGet: (offer, mult) => `You get ₹${offer}/kg — ${mult}× the mandi`,
     winWhy: (product, price, offer) =>
-      `The mandi price is a crash — in the glut most of the crop rots unsold, so it isn’t supply a unit can rely on. Buying direct from you at ₹${offer} gets it steady, fresh crop it turns into ${product} worth ₹${price}/kg — and gets you a guaranteed buyer instead of the crashing mandi. Both win.`,
+      `The mandi price is a crash — in the surplus most of the crop rots unsold, so it isn’t supply a unit can rely on. Buying direct from you at ₹${offer} gets it steady, fresh crop it turns into ${product} worth ₹${price}/kg — and gets you a guaranteed buyer instead of the crashing mandi. Both win.`,
   },
   hi: {
     saathi: "कृषि साथी",

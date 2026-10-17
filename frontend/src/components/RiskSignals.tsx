@@ -1,7 +1,7 @@
 const ROWS = [
   { key: "arrivals", label: "Arrivals surge", weight: "45%", hint: "vs a normal season" },
   { key: "price", label: "Price slide", weight: "40%", hint: "last 7 days" },
-  { key: "season", label: "Harvest season", weight: "15%", hint: "glut month" },
+  { key: "season", label: "Harvest season", weight: "15%", hint: "surplus month" },
 ] as const;
 
 export default function RiskSignals({

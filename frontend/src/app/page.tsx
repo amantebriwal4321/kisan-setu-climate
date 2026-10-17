@@ -1,6 +1,6 @@
 import Link from "next/link";
 import TopBar from "@/components/TopBar";
-import { HeroScene, GlutScene, CrashScene, RerouteScene, CallScene, SunriseScene } from "@/components/scroll/scenes";
+import { HeroScene, SurplusScene, CrashScene, RerouteScene, CallScene, SunriseScene } from "@/components/scroll/scenes";
 import { Ribbon } from "@/components/scroll/world";
 import Reveal from "@/components/Reveal";
 import SchemeMap from "@/components/SchemeMap";
@@ -19,7 +19,7 @@ export default async function Page() {
       <main className="flex-1">
         {/* The cinematic scroll story */}
         <HeroScene />
-        <GlutScene surplusTonnes={Math.round(o.kgAtRisk / 1000)} />
+        <SurplusScene surplusTonnes={Math.round(o.kgAtRisk / 1000)} />
         <CrashScene />
         <RerouteScene rupees={o.potentialRupeesSaved} kg={o.routableKg} unitCount={o.unitsAvailable} />
         <CallScene />
@@ -53,7 +53,7 @@ export default async function Page() {
               <div className="grid gap-5" style={{ gridTemplateColumns: "repeat(auto-fit,minmax(280px,1fr))" }}>
                 {[
                   { n: "01", i: "📉", t: "Predict the crash", d: "We read mandi prices, daily arrivals, the harvest calendar and a live rain or heat anomaly from Open-Meteo, and score crash risk 0 to 100. Four signals anyone can check, not a black box." },
-                  { n: "02", i: "🔀", t: "Route the surplus", d: "We match the glut to nearby SHG/FPO processing units by distance and capacity: “6 units within 50 km can take 40 tonnes of tomato.”" },
+                  { n: "02", i: "🔀", t: "Route the surplus", d: "We match the surplus to nearby SHG/FPO processing units by distance and capacity: “6 units within 50 km can take 40 tonnes of tomato.”" },
                   { n: "03", i: "📞", t: "Call the farmer", d: "The farmer gets a phone call in Hindi, Kannada or English with a better price to accept. No app, no smartphone required." },
                 ].map((s, k) => (
                   <Reveal key={s.n} delay={k * 90}>

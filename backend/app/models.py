@@ -31,7 +31,7 @@ class Crop(Base):
     name = Column(String, nullable=False)
     district_id = Column(Integer, ForeignKey("districts.id"), nullable=False)
     unit = Column(String, default="kg")          # price unit label, e.g. "kg"
-    # harvest months (1-12) when a glut is expected
+    # harvest months (1-12) when a surplus is expected
     harvest_months = Column(JSON, default=list)
 
     district = relationship("District")
